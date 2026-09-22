@@ -1,0 +1,23 @@
+Public series matrices
+======================
+
+figure4/scripts/Fig4.R and figure6/scripts/Fig6.R read two GEO series matrices
+as plain text files from this folder:
+
+  GSE66360_series_matrix.txt   human CD146+ circulating endothelial cells, AMI 49 / control 50
+  GSE48060_series_matrix.txt   human whole blood, 31 first-time-MI / 21 control
+
+Download from GEO (uncompressed, not the .gz):
+
+  ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE66nnn/GSE66360/matrix/GSE66360_series_matrix.txt.gz
+  ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE48nnn/GSE48060/matrix/GSE48060_series_matrix.txt.gz
+
+then gunzip both files here, or fetch them directly in R:
+
+  library(GEOquery)
+  getGEO("GSE66360", destdir = "figure4/raw_data", GSEMatrix = TRUE, AnnotGPL = FALSE)
+  getGEO("GSE48060", destdir = "figure4/raw_data", GSEMatrix = TRUE, AnnotGPL = FALSE)
+
+Probe annotation comes from hgu133plus2.db (see R_REQUIREMENTS.txt), so no
+platform annotation file is needed here.
+

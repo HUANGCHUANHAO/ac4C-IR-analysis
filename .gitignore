@@ -1,0 +1,45 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Input data. Not distributed here; every folder keeps a DOWNLOAD.txt instead
+# (see README). The mm10 annotation GTF in figure2/raw_data/annotation/ is the
+# one exception: it ships with the repository, because the region counts in
+# panel 2A depend on that exact release.
+figure1/raw_data/*.xlsx
+figure2/raw_data/MM10/*.fa
+figure2/raw_data/MM10/*.fa.*
+figure3/raw_data/*.xlsx
+figure3/raw_data/GSE322673/*.csv
+figure4/raw_data/*_series_matrix.txt
+figure4/raw_data/*.gz
+figure5/raw_data/GSE247139/*.gz
+
+# Written at run time into the results/ folders the scripts create
+figure5/results/*.h5ad
+figure6/results/fig6_plot_objects.rds
+
+# Sequencing reads and alignments
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.sam
+*.bam
+*.bai
+
+# Office lock files (~$name)
+~$*
+
+# OS
+.DS_Store
+Thumbs.db

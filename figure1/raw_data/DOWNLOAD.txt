@@ -1,0 +1,18 @@
+acRIP-seq site table
+====================
+
+figure1/scripts/Fig1_data.R reads one table from this folder:
+
+  Supplementary_Table_S1_differential_ac4C_sites.xlsx   differential ac4C sites
+                                                        from the in-house
+                                                        acRIP-seq libraries
+                                                        (Sham vs IR 45 min + 24 h,
+                                                        n = 3 per group)
+
+This file is the manuscript's Supplementary Table S1. Take it from the journal's
+supplementary material and save it here under exactly this name; the repository
+does not carry it.
+
+The script reads the sheets `up.IR_vs_Sham` and `down.IR_vs_Sham` with
+skip = 28, because each sheet opens with three banner rows before the column
+headers. Keep the sheet names, the banner rows and the column layout unchanged.

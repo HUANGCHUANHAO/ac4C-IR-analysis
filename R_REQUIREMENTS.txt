@@ -1,0 +1,23 @@
+# R environment for the R-based analyses (tested with R 4.4.2)
+#
+# CRAN packages:
+#   install.packages(c("ggplot2", "dplyr", "tidyr", "readxl", "reshape2",
+#                      "pROC", "rms"))
+#
+# Bioconductor packages (install BiocManager first, then):
+#   if (!requireNamespace("BiocManager", quietly = TRUE))
+#       install.packages("BiocManager")
+#   BiocManager::install(c("DESeq2", "clusterProfiler", "org.Mm.eg.db",
+#                          "GEOquery", "hgu133plus2.db"))
+#
+# Packages used across the R scripts:
+#   DESeq2            differential expression (Figure 3)
+#   clusterProfiler   GO / KEGG enrichment (Figure 2)
+#   org.Mm.eg.db      mouse gene annotation for enrichment
+#   GEOquery          loading GEO series-matrix files (Figures 4, 6)
+#   hgu133plus2.db    Affymetrix probe annotation (Figures 4, 6)
+#   pROC              ROC curves and AUC (Figures 4, 6)
+#   rms               nomogram and calibration (Figure 6)
+#   ggplot2 / reshape2 / dplyr / tidyr / readxl   plotting and tables
+#
+# The joint diagnostic model uses set.seed(20260905).

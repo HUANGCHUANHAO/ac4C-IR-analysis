@@ -1,0 +1,33 @@
+Files for Figure 2
+==================
+
+Fig2_data.py reads three things: the differential ac4C sites produced by
+figure1/scripts/Fig1_data.R (figure1/results/all_diff_ac4c_sites.csv, which that
+script builds from the Supplementary Table S1 in figure1/raw_data/), the mm10
+genome FASTA and its samtools faidx index from this folder, and the mm10
+annotation GTF, which ships with the repository (see below).
+
+  MM10/BOWTIE2_MM10_Base.fa                                   UCSC mm10 genome FASTA
+  MM10/BOWTIE2_MM10_Base.fa.fai                               its samtools faidx index
+  annotation/Mus_musculus_MM10_forRNAseq3875_20170608.gtf.gz   mm10 gene annotation
+
+Genome FASTA: UCSC mm10 chromFa,
+https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz
+Concatenate chr*.fa into BOWTIE2_MM10_Base.fa, keeping the UCSC chromosome names
+(chr1 ... chr19, chrX, chrY, chrM), then run
+
+  samtools faidx BOWTIE2_MM10_Base.fa
+
+which is what writes the .fai. The name comes from the sequencing provider's
+bowtie2 pipeline; no aligner or aligner index is needed here, only the FASTA.
+Use the same mm10 release as the analysis; panel 2A denominators depend on the
+chromosome lengths in the .fai.
+
+GTF: bundled with this repository at the path above, so nothing to download.
+It is the annotation that came with the sequencing provider's (CloudSeq) acRIP-
+seq delivery. Its header does not name a release, so it cannot be re-fetched
+under that name from Ensembl, UCSC or GENCODE; most of its ~1.53 million lines
+are Ensembl GRCm38 gene/transcript models, followed by a shorter provider-
+appended block, and the chromosome names follow UCSC mm10 (chr1 ... chrM). It
+has to be this exact file: it defines which transcripts the panel 2A regions are
+counted against, so a different annotation moves the region counts.

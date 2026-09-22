@@ -1,0 +1,30 @@
+Count tables for Figure 3
+=========================
+
+Two files are read from this folder by
+figure3/scripts/Fig3_data_deseq2.R.
+
+1. Supplementary_Table_S2_differential_expression.xlsx
+
+   In-house mRNA-seq gene counts (Sham vs IR 45 min + 24 h, n = 3 per group).
+   This file is the manuscript's Supplementary Table S2. Take it from the
+   journal's supplementary material and save it here under exactly this name;
+   the repository does not carry it.
+
+   The script reads the sheet `All_genes_expression` with skip = 1 (one title
+   row above the column headers). Columns 2-7 of that sheet are the six raw
+   counts, in the order IR278, IR279, IR283, Sham286, Sham295, Sham296, and the
+   first column (`gene_id`) and the `gene_name` column are used to build the
+   output table. Keep the sheet name and that column layout unchanged.
+
+2. GSE322673/GSE322673_raw_counts.csv
+
+   Public. Raw gene counts of GSE322673 (mouse myocardium, cold-MI vs RT-MI,
+   3 + 3) taken from the supplementary files of the GEO accession:
+
+     https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE322673
+
+   Save the counts as figure3/raw_data/GSE322673/GSE322673_raw_counts.csv with
+   the first column holding the gene symbols, and keep the column headers as the
+   sample names used by Fig3_data_deseq2.R. The GSE322673 subfolder is not part
+   of this repository, so create it yourself.

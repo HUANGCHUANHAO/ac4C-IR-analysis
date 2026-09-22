@@ -1,0 +1,17 @@
+10x matrices for GSE247139
+==========================
+
+figure5/scripts/Fig5_data.py reads six files from this folder:
+
+  GSE247139_0h_matrix.mtx.gz      GSE247139_0h_barcodes.tsv.gz      GSE247139_0h_features.tsv.gz
+  GSE247139_6h_matrix.mtx.gz      GSE247139_6h_barcodes.tsv.gz      GSE247139_6h_features.tsv.gz
+
+Supplementary files of GSE247139 (Sham 0 h and IR 6 h, mouse heart, 10x). Get
+them from the GEO accession page, supplementary files section, or:
+
+  wget -r -np -nH --cut-dirs=6 -R "index.html*" \
+       ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE247nnn/GSE247139/suppl/
+
+If the file names on GEO differ from the ones above, rename the downloaded files
+to match, because Fig5_data.py opens them by these exact names.
+
